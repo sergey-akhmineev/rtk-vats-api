@@ -1,0 +1,15 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+httpx>=0.27
+pydantic-settings>=2.4
+mcp>=1.10,<2
+
+# Браузерный вход через «Ростелеком Паспорт» (SSO). Не нужен, если пользуетесь
+# только /auth/import или классическим /auth/start. После установки выполнить:
+#   playwright install chromium
+playwright>=1.44
+
+# dev/tests
+pytest>=8.0
+pytest-asyncio>=0.23
+respx>=0.21

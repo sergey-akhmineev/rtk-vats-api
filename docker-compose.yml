@@ -1,0 +1,17 @@
+services:
+  rtk-vats-api:
+    build:
+      context: .
+      # WITH_BROWSER=0 — лёгкий образ без Chromium (вход снаружи через /auth/import
+      # или scripts/login_helper.py). По умолчанию 1 — с браузером для /auth/login.
+      args:
+        WITH_BROWSER: "1"
+    container_name: rtk-vats-api
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # ⚠️ по умолчанию только localhost: за портом живая сессия вашей АТС.
+      # Для доступа по LAN замените на "10.0.0.5:8010:8010" (конкретный IP), а не 0.0.0.0.
+      - "127.0.0.1:8010:8010"
+    volumes:
+      - ./data:/app/data

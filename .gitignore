@@ -1,0 +1,15 @@
+# секреты и рантайм
+.env
+data/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# os/editor
+.DS_Store
+.idea/
+.vscode/
